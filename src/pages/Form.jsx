@@ -1,12 +1,10 @@
-import UsersCard from "../components/UsersCard";
-import { ToastContainer } from "react-toastify";
+import Bronx from "../components/Bronx";
 
 const Form = () => {
   return (
     <>
       <h1>FORM</h1>
-      <UsersCard></UsersCard>
-      <ToastContainer />
+      <Bronx></Bronx>
     </>
   );
 };
