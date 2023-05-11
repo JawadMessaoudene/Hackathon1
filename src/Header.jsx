@@ -1,10 +1,13 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
+import logo from "./assets/logoapple.png";
 
 export const Header = () => {
-  return(
+  return (
     <header>
-      <nav className={styles.menu}>
+      <img className={styles.logo} src={logo} alt="logo" />
+      <div className={styles.navandButton}>
+      <nav className={styles.navBar}>
         <ul>
           <li>
             <NavLink to="/">Home</NavLink>
@@ -20,6 +23,9 @@ export const Header = () => {
           </li>
         </ul>
       </nav>
+      <button className={styles.donateButton}>Donate
+      </button>
+      </div>
     </header>
-  )
-}
+  );
+};
