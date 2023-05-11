@@ -1,22 +1,34 @@
 
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
-}
+  font-family: 'Comfortaa', cursive;}
 
 header{
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: center ;
+  font-family: 'Comfortaa', cursive;
+  padding: 10px;
+} 
+.navandButton{
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 /*Navbar*/
-
+.navBar{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  justify-content: flex-end;
+  z-index: 6;
+}
 .navBar > ul {
   list-style: none;
 }
@@ -26,6 +38,59 @@ header{
   margin: 10px 20px;
 
 }
+.navBar >ul > li > a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 40px;
+  transition: all 0.2s ease-out;
+  display: inline;
+}
+.navBar > ul > li > a:focus{
+  color: #E29551;
+}
+/*logo*/
+.logo{
+  width: 200px;
+height: 200px;
+}
+/*donate button*/
+.donateButton{
+  width: 100px;
+  height: 80px;
+  background-color: #004AAD;
+  color:antiquewhite;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+z-index: 5;
+
+}
+.donateButton:hover{
+  cursor: pointer;
+
+}
+@media screen and (min-width:700px) {
+
+  .navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+   
+  }
+  .donateButton{
+    position: relative;
+    width: 150px;
+  
+  }
+
 
 .navBar >ul > li > a {
   text-decoration: none;
@@ -42,55 +107,10 @@ header{
   
 }
 .navBar > ul > li > a:focus{
-  color: #FF3131;
+  color: #E29551;
 }
-.navBar > ul > li > a::after{
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background:#004AAD;
-  transform : scale(0);
-  transition: transform 0.2s ease-in-out;
-}
+
 .navBar > ul > li > a:hover::after{
   transform: scale(1);
 }
-/*logo*/
-.logo{
-  width: 200px;
-height: 200px;
-}
-/*donate button*/
-.donateButton{
-  width: 150px;
-  height: 80px;
-  background-color: #004AAD;
-  color:antiquewhite;
-  font-size: 20px;
-  font-weight: bold;
-  border-radius: 10px;
-  border: none;
-  position: absolute;
-right: 20px;
-bottom: 20px;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-}
-.donateButton:hover{
-  cursor: pointer;
-
-}
-@media screen and (min-width:700px) {
-  .donateButton{
-    position: relative;
-  
-  }
-
-  .navandButton{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
 }
