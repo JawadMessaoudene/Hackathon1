@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-bg-color: lightblue;
+  --input-bg-color: aliceblue;
+  --font-general-type: open sansSerif;
+  --buttonSubmit-bg-color: rgba(185, 8, 8, 0.872);
+}
+
+.Manatthan {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin: 30px auto;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: var(--font-general-type);
+  background-color: rgb(234, 234, 234);
+}
+
+.titreManatthan {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+}
+
+.containerimageManatthan {
+  display: flex;
+  justify-content: center;
+}
+
+.imageManatthan {
+  width: 40vw;
+  height: 30vw;
+}
+
+.titreVolonteers {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+}
+
+.select {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  margin: 30px auto;
+  background-color: var(--buttonSubmit-bg-color);
+  color: var(--input-bg-color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}

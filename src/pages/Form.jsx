@@ -1,5 +1,8 @@
-import styles from "./Form.module.css"
+import styles from "./Form.module.css";
 import { useState } from "react";
+import Brooklyn from "../components/Brooklyn";
+import Bronx from "../components/Bronx";
+import Mannatthan from "../components/Manatthan";
 
 const Form = () => {
   const [showModal, setShowModal] = useState(false);
@@ -309,6 +312,11 @@ const Form = () => {
             </div>
           )}
         </form>
+      </div>
+      <div className={styles.quartiers}>
+        <Bronx></Bronx>
+        <Brooklyn></Brooklyn>
+        <Mannatthan></Mannatthan>
       </div>
     </>
   );
