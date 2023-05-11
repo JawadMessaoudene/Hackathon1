@@ -1,22 +1,35 @@
 import styles from "./Form.module.css"
 import { useState } from "react";
 
-
 const Form = () => {
+  const [showModal, setShowModal] = useState(false);
   const [userInformation, setUserInformation] = useState({});
-  console.log(userInformation.userName, userInformation.userLastName, userInformation.userEmail, userInformation.userAdress1);
+
+  const handleConfirmation = () => {
+    setShowModal(!showModal)
+  }
 
   return (
     <>
       <div className={styles.form}>
-        <form action="" onSubmit={console.log("Send")}>
+        <form onSubmit={event.preventDefault()}>
+          {/* <form action="" onSubmit={console.log("Send")}> */}
           <div className={styles.nameForm}>
             <h2>Name</h2>
             <label htmlFor="title">Title</label>
-            <select className={styles.title} 
-              name="title" 
-              id="title" 
-              required>
+            <select
+              className={styles.title}
+              name="title"
+              id="title"
+              required
+              value={userInformation.userTitle}
+              onChange={(e) => {
+                setUserInformation({
+                  ...userInformation,
+                  userTitle: e.target.value,
+                });
+              }}
+            >
               <option value="Mr.">Mr.</option>
               <option value="Mrs.">Mrs.</option>
               <option value="Ms.">Ms.</option>
@@ -131,7 +144,6 @@ const Form = () => {
               required
             />
             <br />
-
             <label htmlFor="state">State / Region / Province</label>
             <input
               value={userInformation.userStateRegionProvince}
@@ -147,8 +159,17 @@ const Form = () => {
               placeholder="Enter your State / Region / Province"
             />
             <label htmlFor="postalCode">Zip / Postal Code</label>
-            <input type="text" placeholder="Enter Your Zip / Postal Code" />
-            <br />
+            <input
+              type="text"
+              placeholder="Enter Your Zip / Postal Code"
+              value={userInformation.userZip}
+              onChange={(e) => {
+                setUserInformation({
+                  ...userInformation,
+                  userZip: e.target.value,
+                });
+              }}
+            />
             <label htmlFor="country">Country</label>
             <input
               value={userInformation.userCountry}
@@ -197,10 +218,96 @@ const Form = () => {
               id="phone2"
               placeholder="Enter your phone number"
             />
-            <button className={styles.buttonSubmit} type="submit">
-              Save & Continue
-            </button>
           </div>
+          <div className={styles.availableDates}>
+            <h2>Availables Dates</h2>
+            <label htmlFor="availableDates">Avialable Dates</label>
+            <input
+              type="date"
+              name="avilableDates"
+              id="availableDates"
+              value={userInformation.availableDates}
+              onChange={(e) => {
+                setUserInformation({
+                  ...userInformation,
+                  availableDates: e.target.value,
+                });
+              }}
+            />
+          </div>
+          <button
+            type="submit"
+            className={styles.buttonSubmit}
+            onClick={handleConfirmation}
+          >
+            Save & Continue
+          </button>
+          {showModal && (
+            <div className={styles.showModal}>
+              <h1>Please confirm your information</h1>
+              <span>
+                <h3>Title:</h3>
+                <p>{userInformation.userTitle}</p>
+              </span>
+              <span>
+                <h3>Name: </h3>
+                <p>{userInformation.userName}</p>
+              </span>
+              <span>
+                <h3>Last name: </h3>
+                <p>{userInformation.userLastName}</p>
+              </span>
+              <span>
+                <h3>Email: </h3>
+                <p>{userInformation.userEmail}</p>
+              </span>
+              <span>
+                <h3>Adress: </h3>
+                <p>{userInformation.adressLine1}</p>
+              </span>
+              <span>
+                <h3>Adress:</h3>
+                <p> {userInformation.adressLine2}</p>
+              </span>
+              <span>
+                <h3>City: </h3>
+                <p>{userInformation.userCity}</p>
+              </span>
+              <span>
+                <h3>State / Region / Province:</h3>
+                <p>{userInformation.userStateRegionProvince}</p>
+              </span>
+              <span>
+                <h3>Zip / Postal code: </h3>
+                <p>{userInformation.userZip}</p>
+              </span>
+              <span>
+                <h3>Country: </h3>
+                <p>{userInformation.userCountry}</p>
+              </span>
+              <span>
+                <h3>Phone number 1: </h3>
+                <p>{userInformation.userPhoneNumber1}</p>
+              </span>
+              <span>
+                <h3>Phone number 2: </h3>
+                <p>{userInformation.userPhoneNumber2}</p>
+              </span>
+              <span>
+                <h3>Day: </h3>
+                <p>{userInformation.availableDates}</p>
+              </span>
+              <button
+                type="submit"
+                className={styles.closeModal}
+                onClick={() => {
+                  setShowModal(!showModal);
+                }}
+              >
+                Continue
+              </button>
+            </div>
+          )}
         </form>
       </div>
     </>
