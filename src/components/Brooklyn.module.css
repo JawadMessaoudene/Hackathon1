@@ -25,12 +25,13 @@
 .titreBrooklyn {
   display: flex;
   justify-content: center;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .containerimageBrooklyn {
   display: flex;
   justify-content: center;
+  
 }
 
 .imageBrooklyn {
@@ -49,7 +50,7 @@
   justify-content: center;
   width: 150px;
   margin: 30px auto;
-  background-color: var(--buttonSubmit-bg-color);
+  background-color:#E29551;
   color: var(--input-bg-color);
   border: none;
   border-radius: 5px;

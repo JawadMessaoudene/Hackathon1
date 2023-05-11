@@ -16,7 +16,7 @@ const Brooklyn = () => {
             alt="Brooklyn"
           />
         </div>
-        <h1 className={styles.titreVolonteers}>Volonteers</h1>
+        <h1 className={styles.titreVolonteers}>Volonteer</h1>
         <UsersCard></UsersCard>
         <button className={styles.select}>SELECT</button>
       </div>

@@ -6,17 +6,13 @@ import Mannatthan from "../components/Manatthan";
 
 const Form = () => {
   const [userInformation, setUserInformation] = useState({});
-  console.log(
-    userInformation.userName,
-    userInformation.userLastName,
-    userInformation.userEmail,
-    userInformation.userAdress1
-  );
+
 
   return (
     <>
       <div className={styles.form}>
         <form action="" onSubmit={console.log("Send")}>
+          <div className={styles.formContainer}>
           <div className={styles.nameForm}>
             <h2>Name</h2>
             <label htmlFor="title">Title</label>
@@ -201,17 +197,21 @@ const Form = () => {
               id="phone2"
               placeholder="Enter your phone number"
             />
-            <button className={styles.buttonSubmit} type="submit">
-              Save & Continue
-            </button>
+          
+          </div>
           </div>
         </form>
+        <button className={styles.buttonSubmit} type="submit">
+              Save & Continue
+            </button>
       </div>
+      <div className={styles.neighboor}> Neighborhoods & Interests</div>
       <div className={styles.quartiers}>
         <Bronx></Bronx>
         <Brooklyn></Brooklyn>
         <Mannatthan></Mannatthan>
       </div>
+      
     </>
   );
 };

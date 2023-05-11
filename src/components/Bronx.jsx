@@ -12,7 +12,7 @@ const Bronx = () => {
       <div className={styles.containerimageBronx}>
         <img className={styles.imageBronx} src={Bronxplan} alt="Bronx" />
       </div>
-      <h1 className={styles.titreVolonteers}>Volonteers</h1>
+      <h1 className={styles.titreVolonteers}>Volonteer</h1>
       <UsersCard></UsersCard>
       <button className={styles.select}>SELECT</button>
       </div>
