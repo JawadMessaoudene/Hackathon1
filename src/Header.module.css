@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.menu{
+  background-color: antiquewhite;
+
+}
+
+.menu > ul {
+  list-style: none;
+}
+
+.menu > ul > li{
+  display: inline-block;
+  margin: 10px 20px;
+}
+
+.menu > ul > li > a {
+  text-decoration: none;
+}
