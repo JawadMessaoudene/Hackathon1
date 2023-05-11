@@ -1,10 +1,17 @@
-import styles from "./Form.module.css"
+import styles from "./Form.module.css";
 import { useState } from "react";
-
+import Brooklyn from "../components/Brooklyn";
+import Bronx from "../components/Bronx";
+import Mannatthan from "../components/Manatthan";
 
 const Form = () => {
   const [userInformation, setUserInformation] = useState({});
-  console.log(userInformation.userName, userInformation.userLastName, userInformation.userEmail, userInformation.userAdress1);
+  console.log(
+    userInformation.userName,
+    userInformation.userLastName,
+    userInformation.userEmail,
+    userInformation.userAdress1
+  );
 
   return (
     <>
@@ -13,10 +20,7 @@ const Form = () => {
           <div className={styles.nameForm}>
             <h2>Name</h2>
             <label htmlFor="title">Title</label>
-            <select className={styles.title} 
-              name="title" 
-              id="title" 
-              required>
+            <select className={styles.title} name="title" id="title" required>
               <option value="Mr.">Mr.</option>
               <option value="Mrs.">Mrs.</option>
               <option value="Ms.">Ms.</option>
@@ -202,6 +206,11 @@ const Form = () => {
             </button>
           </div>
         </form>
+      </div>
+      <div className={styles.quartiers}>
+        <Bronx></Bronx>
+        <Brooklyn></Brooklyn>
+        <Mannatthan></Mannatthan>
       </div>
     </>
   );
