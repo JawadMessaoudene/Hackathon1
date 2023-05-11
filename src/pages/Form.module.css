@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --main-bg-color: lightblue;
+  --input-bg-color: aliceblue;
+  --font-general-type: open sansSerif;
+  --buttonSubmit-bg-color: rgba(185, 8, 8, 0.872);
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  
+}
+
+.nameForm,
+.mailForm,
+.adress,
+.phoneNumber {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  /* max-width: 600px; */
+  margin: 30px auto;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: var(--font-general-type);
+  background-color: rgb(234, 234, 234);
+}
+
+.form  h2 {
+  margin: 10px 0px;
+}
+.form input{
+  margin: 2px 0px 10px 0px;
+  height: 30px;
+  background-color: var(--input-bg-color);
+  border-radius: 5px;
+  padding-left: 5px;
+  border: 1px solid black;
+}
+
+.title {
+  width: 10vw;
+  margin-bottom: 10px;
+  background-color: var(--input-bg-color);
+}
+
+.buttonSubmit {
+  width: 150px;
+  margin: 30px auto;
+  background-color: var(--buttonSubmit-bg-color);
+  color: var(--input-bg-color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+
+}
+
+@media (min-width: 700px) {
+  .nameForm,
+  .mailForm,
+  .adress,
+  .phoneNumber {
+  max-width: 800px;
+  
+  }
+
+  
+
+}
