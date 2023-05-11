@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const Form = () => {
   const [userInformation, setUserInformation] = useState({});
-  console.log(userInformation.userName, userInformation.userLastName, userInformation.userEmail, userInformation.userAdress1);
+  console.log(userInformation.userName, userInformation.userLastName, userInformation.userEmail, userInformation.userAdress1, userInformation.availableDates);
 
   return (
     <>
@@ -13,10 +13,7 @@ const Form = () => {
           <div className={styles.nameForm}>
             <h2>Name</h2>
             <label htmlFor="title">Title</label>
-            <select className={styles.title} 
-              name="title" 
-              id="title" 
-              required>
+            <select className={styles.title} name="title" id="title" required>
               <option value="Mr.">Mr.</option>
               <option value="Mrs.">Mrs.</option>
               <option value="Ms.">Ms.</option>
@@ -197,10 +194,26 @@ const Form = () => {
               id="phone2"
               placeholder="Enter your phone number"
             />
-            <button className={styles.buttonSubmit} type="submit">
-              Save & Continue
-            </button>
           </div>
+          <div className={styles.availableDates}>
+            <h2>Availables Dates</h2>
+            <label htmlFor="availableDates">Avialable Dates</label>
+            <input
+              type="date"
+              name="avilableDates"
+              id="availablesDates"
+              value={userInformation.availableDates}
+              onChange={(e) => {
+                setUserInformation({
+                  ...userInformation,
+                  availableDates: e.target.value,
+                });
+              }}
+            />
+          </div>
+          <button className={styles.buttonSubmit} type="submit">
+            Save & Continue
+          </button>
         </form>
       </div>
     </>
