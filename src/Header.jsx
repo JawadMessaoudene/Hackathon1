@@ -6,7 +6,6 @@ export const Header = () => {
   return (
     <header>
       <img className={styles.logo} src={logo} alt="logo" />
-      <div className={styles.navandButton}>
       <nav className={styles.navBar}>
         <ul>
           <li>
@@ -25,7 +24,6 @@ export const Header = () => {
       </nav>
       <button className={styles.donateButton}>Donate
       </button>
-      </div>
     </header>
   );
 };
