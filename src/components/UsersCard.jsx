@@ -16,18 +16,16 @@ export default function UsersCard() {
     <div className={styles.cardUsers}>
       {users && (
         <div className={styles.displayUser}>
-          <img
-            className={styles.usersPaper}
-            src={users.picture.large}
-            alt="userimage"
-          />
-          <h2>
+          <div className={styles.usersPaper}>
+            <img src={users.picture.large} alt="userimage" />
+          </div>
+          <h2 className={styles.usersWrite}>
             {users.name.first}&nbsp;
             {users.name.last}
             <br></br>
             Age:{users.registered.age}
             <br></br>
-            Email:{users.email}
+            Nationality:{users.nat}
             <br></br>
             Phone:{users.phone}
           </h2>

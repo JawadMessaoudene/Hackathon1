@@ -10,14 +10,12 @@
   --buttonSubmit-bg-color: rgba(185, 8, 8, 0.872);
 }
 
-
 .form {
   background-color: var(--main-bg-color);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   width: 100vw;
-  
 }
 
 .nameForm,
@@ -27,7 +25,6 @@
   display: flex;
   flex-direction: column;
   width: 80vw;
-  /* max-width: 600px; */
   margin: 30px auto;
   border-radius: 10px;
   padding: 10px;
@@ -35,10 +32,10 @@
   background-color: rgb(234, 234, 234);
 }
 
-.form  h2 {
+.form h2 {
   margin: 10px 0px;
 }
-.form input{
+.form input {
   margin: 2px 0px 10px 0px;
   height: 30px;
   background-color: var(--input-bg-color);
@@ -61,7 +58,12 @@
   border: none;
   border-radius: 5px;
   padding: 10px;
+}
 
+.quartiers {
+  background-color: var(--main-bg-color);
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (min-width: 700px) {
@@ -69,10 +71,13 @@
   .mailForm,
   .adress,
   .phoneNumber {
-  max-width: 800px;
-  
+    max-width: 800px;
   }
+}
 
-  
-
+@media (max-width: 700px) {
+  .quartiers {
+    flex-direction: column;
+    width: 100%;
+  }
 }

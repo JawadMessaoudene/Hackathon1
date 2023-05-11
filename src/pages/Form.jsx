@@ -1,7 +1,8 @@
 import styles from "./Form.module.css";
 import { useState } from "react";
-
+import Brooklyn from "../components/Brooklyn";
 import Bronx from "../components/Bronx";
+import Mannatthan from "../components/Manatthan";
 
 const Form = () => {
   const [userInformation, setUserInformation] = useState({});
@@ -206,7 +207,11 @@ const Form = () => {
           </div>
         </form>
       </div>
-      <Bronx></Bronx>
+      <div className={styles.quartiers}>
+        <Bronx></Bronx>
+        <Brooklyn></Brooklyn>
+        <Mannatthan></Mannatthan>
+      </div>
     </>
   );
 };

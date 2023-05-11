@@ -5,15 +5,17 @@ import styles from "./Bronx.module.css";
 const Bronx = () => {
   return (
     <>
-      <div className={styles.titreBron}>
+    <div className={styles.Bronx}>
+      <div className={styles.titreBronx}>
         <h1>Bronx</h1>
       </div>
-      <div className={styles.containerimageBron}>
-        <img className={styles.imageBron} src={Bronxplan} alt="Bronx" />
+      <div className={styles.containerimageBronx}>
+        <img className={styles.imageBronx} src={Bronxplan} alt="Bronx" />
       </div>
       <h1 className={styles.titreVolonteers}>Volonteers</h1>
       <UsersCard></UsersCard>
       <button className={styles.select}>SELECT</button>
+      </div>
     </>
   );
 };
