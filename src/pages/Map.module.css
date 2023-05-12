@@ -1,0 +1,16 @@
+.map{
+  width: 100vw;
+  height: calc(100vh - 220px);
+}
+
+.popUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image{
+  width: 100px;
+  height: 200px;
+  border-radius: 10px;
+}
