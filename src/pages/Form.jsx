@@ -258,13 +258,7 @@ const Form = () => {
                 }}
               />
             </div>
-            <button
-              type="submit"
-              className={styles.buttonSubmit}
-              onClick={handleConfirmation}
-            >
-              Save & Continue
-            </button>
+       
             {showModal && (
               <div className={styles.showModal}>
                 <h1>Please confirm your information</h1>
@@ -334,12 +328,20 @@ const Form = () => {
             </div>
           </form>
       </div>
+    <div className={styles.volunteerandButton}>
       <div className={styles.quartiers}>
         <Bronx></Bronx>
         <Brooklyn></Brooklyn>
         <Mannatthan></Mannatthan>
       </div>
-      
+      <button
+              type="submit"
+              className={styles.buttonSubmit}
+              onClick={handleConfirmation}
+            >
+              Save & Continue
+            </button>
+            </div>
     </>
   );
 };
