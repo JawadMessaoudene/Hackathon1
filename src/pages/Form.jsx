@@ -3,6 +3,7 @@ import { useState } from "react";
 import Brooklyn from "../components/Brooklyn";
 import Bronx from "../components/Bronx";
 import Mannatthan from "../components/Manatthan";
+import countries from "../assets/Countries.json";
 
 const Form = () => {
   const [showModal, setShowModal] = useState(false);
@@ -174,7 +175,7 @@ const Form = () => {
               }}
             />
             <label htmlFor="country">Country</label>
-            <input
+            {/* <input
               value={userInformation.userCountry}
               onChange={(e) => {
                 setUserInformation({
@@ -187,7 +188,24 @@ const Form = () => {
               id="country"
               placeholder="Enter Your Country"
               required
-            />
+            /> */}
+            {
+              <select
+                value={userInformation.userCountry}
+                onChange={(e) => {
+                  setUserInformation({
+                    ...userInformation,
+                    userCountry: e.target.value,
+                  });
+                }}
+              >
+                {countries.map((country, index) => (
+                  <option key={index} value={country.code}>
+                    {country.name}
+                  </option>
+                ))}
+              </select>
+            }
           </div>
           <div className={styles.phoneNumber}>
             <h2>Phone Number</h2>
