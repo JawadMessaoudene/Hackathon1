@@ -3,11 +3,13 @@ import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect } from "react";
 import styles from "./UsersCard.module.css";
 
+
 export default function UsersCard() {
   const [users, setUsers] = useState(null);
+  
 
   useEffect(() => {
-    fetch("https://randomuser.me/api")
+    fetch(`https://randomuser.me/api?nat=${"fr"}`)
       .then((resp) => resp.json())
       .then((data) => setUsers(data.results[0]));
   }, []);
