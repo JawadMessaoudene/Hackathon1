@@ -1,3 +1,5 @@
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import styles from "./Form.module.css";
 import { useState } from "react";
 import Brooklyn from "../components/Brooklyn";
@@ -10,13 +12,13 @@ const Form = () => {
   const [userInformation, setUserInformation] = useState({});
 
   const handleConfirmation = () => {
-    setShowModal(!showModal)
-  }
+    setShowModal(!showModal);
+  };
 
   return (
     <>
       <div className={styles.form}>
-          <form onSubmit={event.preventDefault()}>
+        <form onSubmit={event.preventDefault()}>
           <div className={styles.formContainer}>
             {/* <form action="" onSubmit={console.log("Send")}> */}
             {/* <div className={styles.formContainer}> */}
@@ -258,7 +260,7 @@ const Form = () => {
                 }}
               />
             </div>
-       
+
             {showModal && (
               <div className={styles.showModal}>
                 <h1>Please confirm your information</h1>
@@ -319,29 +321,30 @@ const Form = () => {
                   className={styles.closeModal}
                   onClick={() => {
                     setShowModal(!showModal);
+                    toast.success("Your request has been taken into account", {theme: "dark",});
                   }}
                 >
-                  Continue
+                  Confirm
                 </button>
               </div>
             )}
-            </div>
-          </form>
+          </div>
+        </form>
       </div>
-    <div className={styles.volunteerandButton}>
-      <div className={styles.quartiers}>
-        <Bronx></Bronx>
-        <Brooklyn></Brooklyn>
-        <Mannatthan></Mannatthan>
+      <div className={styles.volunteerandButton}>
+        <div className={styles.quartiers}>
+          <Bronx></Bronx>
+          <Brooklyn></Brooklyn>
+          <Mannatthan></Mannatthan>
+        </div>
+        <button
+          type="submit"
+          className={styles.buttonSubmit}
+          onClick={handleConfirmation}
+        >
+          Save & Continue
+        </button>
       </div>
-      <button
-              type="submit"
-              className={styles.buttonSubmit}
-              onClick={handleConfirmation}
-            >
-              Save & Continue
-            </button>
-            </div>
     </>
   );
 };

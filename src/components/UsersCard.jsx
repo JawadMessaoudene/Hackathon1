@@ -2,24 +2,16 @@ import "react-toastify/dist/ReactToastify.css";
 // import { toast } from "react-toastify";
 import { useState, useEffect } from "react";
 import styles from "./UsersCard.module.css";
-import ContextGuides from "../contexts/ContextGuides";
-import { useContext } from "react";
-
 
 export default function UsersCard() {
   const [users, setUsers] = useState(null);
   
-  const { guidesInformation, setGuidesInformation } = useContext(ContextGuides)
-
   useEffect(() => {
     fetch(`https://randomuser.me/api?nat=${"fr"}`)
       .then((resp) => resp.json())
-      .then((data) => setUsers(data.results[0]))
-      .then((guide) => setGuidesInformation({...guidesInformation, guide}));
+      .then((data) => setUsers(data.results[0]));
   }, []);
 
-  
-  
   return (
     <div className={styles.cardUsers}>
       {users && (
