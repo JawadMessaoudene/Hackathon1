@@ -15,6 +15,9 @@ export const Header = () => {
             <NavLink to="/form">Form</NavLink>
           </li>
           <li>
+            <NavLink to="/map">Map</NavLink>
+          </li>
+          <li>
             <NavLink>About</NavLink>
           </li>
           <li>
@@ -22,8 +25,7 @@ export const Header = () => {
           </li>
         </ul>
       </nav>
-      <button className={styles.donateButton}>Donate
-      </button>
+      <button className={styles.donateButton}>Donate</button>
     </header>
   );
 };
