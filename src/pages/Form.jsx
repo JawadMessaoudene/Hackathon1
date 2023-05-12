@@ -17,6 +17,7 @@ const Form = () => {
       <div className={styles.form}>
         <form onSubmit={event.preventDefault()}>
           {/* <form action="" onSubmit={console.log("Send")}> */}
+          <div className={styles.formContainer}>
           <div className={styles.nameForm}>
             <h2>Name</h2>
             <label htmlFor="title">Title</label>
@@ -318,6 +319,7 @@ const Form = () => {
         <Brooklyn></Brooklyn>
         <Mannatthan></Mannatthan>
       </div>
+      
     </>
   );
 };
