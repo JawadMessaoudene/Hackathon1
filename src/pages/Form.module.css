@@ -50,6 +50,15 @@
   border: 1px solid black;
 }
 
+.form select {
+  margin: 2px 0px 10px 0px;
+  height: 30px;
+  background-color: var(--input-bg-color);
+  border-radius: 5px;
+  padding-left: 5px;
+  border: 1px solid black;
+}
+
 .title {
   width: 10vw;
   margin-bottom: 10px;
@@ -91,14 +100,12 @@
 }
 
 .showModal{
-  
   background-color: aliceblue;
-  
   position: absolute;
   height: 70vh;
   width: 80vw;
-  bottom: 0;
-  top: 80%;
+  /* bottom: 50%; */
+  top: 150%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;

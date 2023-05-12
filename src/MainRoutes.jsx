@@ -5,15 +5,15 @@ import { Header } from "./Header"
 import ContextUserInfo from "./contexts/ContextUserInfo";
 import { useState } from "react";
 import Map from "./pages/Map";
-import ContextGuides from "./contexts/ContextGuides";
+import { ToastContainer } from "react-toastify";
 
 const MainRoutes = () => {
   const [userInformation, setUserInformation] = useState({});
-  const [ guideInformation, setGuideinformation] = useState()
+  
 
   return (
     <>
-      <ContextGuides.Provider value={{ guideInformation, setGuideinformation}}>
+      
         <ContextUserInfo.Provider
           value={{ userInformation, setUserInformation }}
         >
@@ -24,7 +24,7 @@ const MainRoutes = () => {
             <Route path="/map" element={<Map />} />
           </Routes>
         </ContextUserInfo.Provider>
-      </ContextGuides.Provider>
+      <ToastContainer></ToastContainer>
     </>
   );
 }
